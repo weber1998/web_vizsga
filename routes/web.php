@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TemaController;
+use App\Http\Controllers\SzavakController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/szavak', [SzavakController::class, 'index']);
+Route::get('/szavak/tema/{id}', [SzavakController::class, 'tema']);
+Route::get('/tema', [TemaController::class, 'index']);
